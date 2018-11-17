@@ -60,7 +60,6 @@ if(file_exists($filePath)) {
 if(isset($_SERVER['HTTP_HOST'])) {
     $serverName = $_SERVER['HTTP_HOST'];
     if(isset($envs[$serverName])){   
-        dd($envs[$serverName]);
         $app->loadEnvironmentFrom($envs[$serverName]);
     }
 }
