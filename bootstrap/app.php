@@ -51,5 +51,16 @@ $app->singleton(
 | from the actual running of the application and sending responses.
 |
 */
-
+$filePath = $app->configPath().'/envs.php';
+$envs = [];
+if(file_exists($filePath)) {
+    $envs = include $filePath;
+} 
+ 
+if(isset($_SERVER['HTTP_HOST'])) {
+    $serverName = $_SERVER['HTTP_HOST'];
+    if(isset($envs[$serverName])){   
+        $app->loadEnvironmentFrom($envs[$serverName]);
+    }
+}
 return $app;
