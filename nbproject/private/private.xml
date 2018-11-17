@@ -3,9 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/xampp/htdocs/blog/resources/views/user/profile.blade.php</file>
             <file>file:/D:/xampp/htdocs/blog/app/Http/Controllers/UserController.php</file>
             <file>file:/D:/xampp/htdocs/blog/app/Models/User.php</file>
-            <file>file:/D:/xampp/htdocs/blog/config/auth.php</file>
             <file>file:/D:/xampp/htdocs/blog/resources/views/master.blade.php</file>
             <file>file:/D:/xampp/htdocs/blog/resources/views/user/dashboard.blade.php</file>
             <file>file:/D:/xampp/htdocs/blog/routes/web.php</file>

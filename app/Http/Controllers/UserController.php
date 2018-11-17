@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Log;
 use View;
 use Session;
 use Redirect;
+use Validator;
 
 class UserController extends Controller
 {
@@ -56,15 +57,23 @@ class UserController extends Controller
             }
         }
     }
+    
     public function profile(){
-         $viewDataArr['userData'] = json_decode(Auth::user(),true); 
+        $viewDataArr['userData'] = json_decode(Auth::user(),true); 
         return View::make('user.profile')->with($viewDataArr);
     }
+    
     public function updateprofile(Request $request){
-        Log::info('post data :: ',$request->all(), ['method' => 'updateprofile']);
         $user = User::find($request->user_id);
+        
+        $validator = Validator::make($request->all(), $user->rules,$user->messages);
+        if ($validator->fails()) {
+            return Redirect::back()->withErrors($validator);
+        }
+        
         $user->username = $request->username;
         if($request->password != '') $user->password =  Hash::make($request->password);
+         
         if($user->save()){
             Session::flash('message', 'Details are updated successfully!'); 
             return Redirect::back();
