@@ -11,18 +11,22 @@ use Redirect;
 
 class UserController extends Controller
 {
-    public function setLocale($isoCode) {
+    public function __construct() {
+        $this->setLocale('ID');
+    }
+    public function setLocale($isoCode='') {
         $locale = 'IN'; //Default
-        $langs = array(
-            'IN' => 'en',
-            'ID' => 'id_ID',
-        );
-        $locale = isset($langs[$isoCode]) ? $langs[$isoCode] : $locale;
+        if($isoCode){
+            $langs = array(
+                'IN' => 'en',
+                'ID' => 'id_ID',
+            );
+            $locale = isset($langs[$isoCode]) ? $langs[$isoCode] : $locale;
+        }
         app()->setLocale($locale);
     }
     public function login(Request $request){
         Log::info('Login page loaded... ');
-        $this->setLocale('ID');
         return View::make('user.login');
     }
     public function dologin(Request $request){
