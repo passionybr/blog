@@ -1,5 +1,3 @@
-let mix = require('laravel-mix');
-
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -10,6 +8,22 @@ let mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
+let mix = require('laravel-mix');
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+const jsPath = 'public/js/';
+const cssPath = 'public/css/';
+
+const jsFiles = [jsPath+'jquery.min.js', jsPath+'bootstrap.min.js', jsPath+'app.js'];
+const cssFiles = [cssPath+'styles.css', cssPath+'app.css'];
+
+
+mix.combine(jsFiles, jsPath+'alljs.js'); /*merging all js files into single file*/
+	
+mix.styles(cssFiles, cssPath+'allcss.css');
+
+mix.minify(jsPath+'alljs.js'); 
+mix.minify(cssPath+'allcss.css'); 
+
+if (mix.inProduction()) {
+    mix.version('public/js/');
+}

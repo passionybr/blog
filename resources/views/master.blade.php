@@ -11,7 +11,8 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 		<link href="css/styles.css" rel="stylesheet" type="text/css">
 		<script src="/js/jquery.min.js" type="text/javascript"></script>
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="{{url(mix('js/bootstrap.min.js'))}}" type="text/javascript"></script>
+        <script src="{{url(mix('js/alljs.min.js'))}}" type="text/javascript"></script>
      </head>
     <body>
         <div class="flex-center position-ref full-height">
