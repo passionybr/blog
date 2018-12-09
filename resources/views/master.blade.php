@@ -9,9 +9,11 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-		<link href="css/styles.css" rel="stylesheet" type="text/css">
-		<script src="/js/jquery.min.js" type="text/javascript"></script>
-        <script src="{{url(mix('js/bootstrap.min.js'))}}" type="text/javascript"></script>
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
+        
+<!--        <script src="/js/jquery.min.js" type="text/javascript"></script>
+        <script src="{{url(('js/bootstrap.min.js'))}}" type="text/javascript"></script>
+        <script src="{{url(('js/custom.js'))}}" type="text/javascript"></script>-->
         <script src="{{url(mix('js/alljs.min.js'))}}" type="text/javascript"></script>
      </head>
     <body>
