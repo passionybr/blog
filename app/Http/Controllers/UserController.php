@@ -8,11 +8,19 @@ use Illuminate\Support\Facades\Log;
 use View;
 use Session;
 use Redirect;
+use App\Service\SampleServiceInterface;
 
 class UserController extends Controller
 {
-    public function login(Request $request){
+    
+     public function login(SampleServiceInterface $sample_service)
+     {
+        $sample_service->getData();
+     }
+    
+    public function login1(Request $request){
          Log::info('Login page loaded... ');
+          
         return View::make('user.login');
     }
     public function dologin(Request $request){
