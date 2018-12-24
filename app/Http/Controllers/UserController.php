@@ -13,12 +13,16 @@ use App\Service\SampleServiceInterface;
 class UserController extends Controller
 {
     
-     public function login(SampleServiceInterface $sample_service)
+    /*
+     *  Example of Service Provider
+     * 
+     */
+     public function testsp(SampleServiceInterface $sample_service)
      {
         $sample_service->getData();
      }
     
-    public function login1(Request $request){
+    public function login(Request $request){
          Log::info('Login page loaded... ');
           
         return View::make('user.login');

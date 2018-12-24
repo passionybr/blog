@@ -21,4 +21,5 @@ Route::any('/logout','UserController@logout');
 Route::any('/dashboard','UserController@dashboard')->middleware('auth');
 Route::any('/profile','UserController@profile');
 Route::any('/updateprofile','UserController@updateprofile');
+Route::any('/testsp','UserController@testsp');
  
